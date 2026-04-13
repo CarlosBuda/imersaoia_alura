@@ -1,6 +1,16 @@
+:root {
+    --bg: #141414;
+    --text: #ffffff;
+    --panel: rgba(20, 20, 20, 0.95);
+    --muted: #808080;
+    --border: #7a7a7a;
+    --button-bg: transparent;
+    --button-text: #ffffff;
+}
+
 body {
-    background-color: #141414;
-    color: #fff;
+    background-color: var(--bg);
+    color: var(--text);
     margin: 0;
     display: flex;
     align-items: center;
@@ -9,18 +19,57 @@ body {
     font-family: 'Geist', sans-serif;
 }
 
+body.light-mode {
+    --bg: #f4f4f4;
+    --text: #111111;
+    --panel: rgba(255, 255, 255, 0.95);
+    --muted: #5a5a5a;
+    --border: #c3c3c3;
+    --button-text: #111111;
+}
+
 .conteudo-principal {
     text-align: center;
     width: 100%;
     max-width: 1200px;
     padding: 20px;
+    background-color: var(--panel);
+    border-radius: 20px;
 }
 
 h1 {
     font-size: 3.5vw;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
+}
+
+.topo-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.botao-toggle {
+    background: var(--button-bg);
+    border: 1px solid var(--border);
+    color: var(--button-text);
+    padding: 12px 22px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 999px;
+}
+
+.botao-toggle:hover,
+.botao-toggle:focus {
+    border-color: #999;
 }
 
 .lista-perfis {
@@ -76,7 +125,7 @@ h1 {
 .nome-perfil {
     font-size: 1.2vw;
     margin-top: 8px;
-    color: #808080;
+    color: var(--muted);
     font-weight: 400;
     transition: color 0.3s;
 }
@@ -99,8 +148,8 @@ h1 {
 
 .botao-gerenciar {
     background: transparent;
-    border: 1px solid grey;
-    color: grey;
+    border: 1px solid var(--border);
+    color: var(--muted);
     padding: 10px 30px;
     font-size: 1vw;
     text-transform: uppercase;
@@ -112,5 +161,5 @@ h1 {
 
 .botao-gerenciar:hover {
     border-color: #e5e5e5;
-    color: #e5e5e5;
+    color: var(--text);
 }
